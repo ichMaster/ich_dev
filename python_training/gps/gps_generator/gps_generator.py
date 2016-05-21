@@ -25,15 +25,23 @@ def get_next_point(point, distance):
 
 
 def generate(start_point, step, amount):
-    point = [100, 100, 3]
-    next_point = get_next_point(point, 5)
-    print(next_point)
+    point = []
+    id = 0
+    for i in start_point:
+        point.append(i)
+    print(id, point)
+
+    while amount > 0:
+        point = get_next_point(point, step)
+        amount -= 1
+        id += 1
+        print(id, point)
     return
 
 
 def main():
     start_point = [100, 100, 1]
-    generate(start_point, 5, 10)
+    generate(start_point, 5, 100)
     return
 
 
