@@ -86,9 +86,22 @@ def main(file_location, start_point, step, amount):
 # CLI execution
 if __name__ == "__main__":
     config_file_location = CONFIG_FILE_LOCATION
-    params = get_config(config_file_location)
-    start_point = []
-    start_point.append(float(params[0]))
-    start_point.append(float(params[1]))
-    start_point.append(float(params[2]))
-    main(None, start_point, int(params[3]), None)
+    file_location = FILE_LOCATION
+    start_point = START_POINT
+    step = STEP
+    amount = AMOUNT
+
+    if len(sys.argv) > 1:
+        file_location = sys.argv[1]
+    if len(sys.argv) > 2:
+        config_file_location = sys.argv[2]
+        params = get_config(config_file_location)
+        start_point = []
+        start_point.append(float(params[0]))
+        start_point.append(float(params[1]))
+        start_point.append(float(params[2]))
+        step = int(params[3])
+    if len(sys.argv) > 3:
+        amount = int(sys.argv[3])
+
+    main(file_location, start_point, step, amount)
