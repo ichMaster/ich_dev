@@ -7,6 +7,12 @@ import time
 import math
 import sys
 
+FILE_LOCATION = "./res.csv"
+CONFIG_FILE_LOCATION = "./conf.txt"
+START_POINT = [100, 100, 1]
+STEP = 5
+AMOUNT = 100
+
 
 def get_random(max):
     random.seed(time.time())
@@ -54,14 +60,35 @@ def write_file(file_location, points):
     return
 
 
-def main():
-    start_point = [100, 100, 1]
-    file_location = "./res.csv"
-    points = generate(start_point, 5, 100)
+def get_config(file_location):
+    f = open(file_location, 'r')
+    row = f.readline()
+    params = row.split(',')
+    f.close()
+    return params
+
+
+def main(file_location, start_point, step, amount):
+    if file_location is None:
+        file_location = FILE_LOCATION
+    if start_point is None:
+        start_point = START_POINT
+    if step is None:
+        step = STEP
+    if amount is None:
+        amount = AMOUNT
+
+    points = generate(start_point, step, amount)
     write_file(file_location, points)
     return
 
 
 # CLI execution
 if __name__ == "__main__":
-    main()
+    config_file_location = CONFIG_FILE_LOCATION
+    params = get_config(config_file_location)
+    start_point = []
+    start_point.append(float(params[0]))
+    start_point.append(float(params[1]))
+    start_point.append(float(params[2]))
+    main(None, start_point, int(params[3]), None)
