@@ -3,7 +3,17 @@
 
 """
 
-if __name__ == "__main__":
-    print("hello world")
 
-    
+def generate():
+    print("hello world")
+    return
+
+
+def main():
+    generate()
+    return
+
+
+# CLI execution
+if __name__ == "__main__":
+    main()
