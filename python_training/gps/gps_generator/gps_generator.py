@@ -5,6 +5,7 @@
 import random
 import time
 import math
+import sys
 
 
 def get_random(max):
@@ -25,23 +26,39 @@ def get_next_point(point, distance):
 
 
 def generate(start_point, step, amount):
+    points = []
     point = []
     id = 0
     for i in start_point:
         point.append(i)
-    print(id, point)
+    points.append([id, point])
 
     while amount > 0:
         point = get_next_point(point, step)
         amount -= 1
         id += 1
-        print(id, point)
+        points.append([id, point])
+    return points
+
+
+def write_file(file_location, points):
+    f = open(file_location, 'w')
+    for i in points:
+        row = ""
+        row += str(i[0])
+        for p in i[1]:
+            row += "," + str(p)
+        row += "\n"
+        f.writelines(row)
+    f.close()
     return
 
 
 def main():
     start_point = [100, 100, 1]
-    generate(start_point, 5, 100)
+    file_location = "./res.csv"
+    points = generate(start_point, 5, 100)
+    write_file(file_location, points)
     return
 
 
