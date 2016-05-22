@@ -9,7 +9,7 @@ import sys
 
 FILE_LOCATION = "./res.csv"
 CONFIG_FILE_LOCATION = "./conf.txt"
-START_POINT = [100, 100, 1]
+START_POINT = (100, 100, 1)
 STEP = 5
 AMOUNT = 100
 
@@ -21,41 +21,27 @@ def get_random(max):
 
 
 def get_next_point(point, distance):
-    next_point = []
+    lat, lon, ele = point
     ang = get_random(360)
-    lat = point[0] + distance * math.cos(ang)
-    lon = point[1] + distance * math.sin(ang)
-    next_point.append(lat)
-    next_point.append(lon)
-    next_point.append(point[2])
-    return next_point
+    new_lat = lat + distance * math.cos(ang)
+    new_lon = lon + distance * math.sin(ang)
+    return new_lat, new_lon, ele
 
 
 def generate(start_point, step, amount):
-    points = []
-    point = []
-    id = 0
-    for i in start_point:
-        point.append(i)
-    points.append([id, point])
-
-    while amount > 0:
+    point = tuple(start_point)
+    points = {0: point}
+    for id in range(amount):
         point = get_next_point(point, step)
-        amount -= 1
-        id += 1
-        points.append([id, point])
+        points.update({id + 1: point})
     return points
 
 
 def write_file(file_location, points):
     f = open(file_location, 'w')
-    for i in points:
-        row = ""
-        row += str(i[0])
-        for p in i[1]:
-            row += "," + str(p)
-        row += "\n"
-        f.writelines(row)
+    for key, val in points.items():
+        lon, lat, ele = val
+        f.writelines("{id},{lat},{lon},{ele}\n".format(id = key, lat = lat, lon = lon, ele = ele))
     f.close()
     return
 
@@ -91,15 +77,14 @@ if __name__ == "__main__":
     step = STEP
     amount = AMOUNT
 
-    if len(sys.argv) > 1:
+    argv_len = len(sys.argv)
+    if argv_len > 1:
         file_location = sys.argv[1]
-    if len(sys.argv) > 2:
+    if argv_len > 2:
         config_file_location = sys.argv[2]
         params = get_config(config_file_location)
-        start_point = []
-        start_point.append(float(params[0]))
-        start_point.append(float(params[1]))
-        start_point.append(float(params[2]))
+        lon, lat, ele = params[:3]
+        start_point = float(lon), float(lat), float(ele)
         step = int(params[3])
     if len(sys.argv) > 3:
         amount = int(sys.argv[3])
