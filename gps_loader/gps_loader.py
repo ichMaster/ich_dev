@@ -22,7 +22,7 @@ for row in f:
         user_id, lat, lon, date, time = row_id, elements[0], elements[1], elements[5], elements[6]
         insert_sting = "insert into gps (user_id, gps_date, gps_time, lat, lon) values({0}, '{1}', '{2}', {3}, {4})".format(user_id, date, time, lat, lon)
         json_string = '{{"user_id":"{0}", "lat":"{1}", "lng":"{2}", "date":"{3}", "time":"{4}"}}'.format(user_id, lat, lon, date, time)
-        geojson_string = '{{"type": "Feature", "geometry": {{"type": "Point", "coordinates": [{0}, {1}]}}, "properties": {{"user_id": "{2}", "date":"{3}", "time":"{4}"}} }}'.format(lat, lon, user_id, date, time)
+        geojson_string = '{{"type": "Feature", "geometry": {{"type": "Point", "coordinates": [{0}, {1}]}}, "properties": {{"user_id": "{2}", "date":"{3}", "time":"{4}", "title":"user_id: {5}"}} }}'.format(lon, lat, user_id, date, time, user_id)
         json_all.append(json_string)
         geojson_all.append(geojson_string)
         cursor.execute(insert_sting)
@@ -30,8 +30,9 @@ for row in f:
 
 f.close()
 connection.commit()
-rdb.set('all_points', '[' + ','.join(json_all) + '{}]')
-rdb.set('all_geopoints', '{{"type": "FeatureCollection",  "features": [' + ','.join(json_all) + ']}}')
+rdb.set('all_points', '[' + ','.join(json_all) + ']')
+rdb.set('all_geopoints', '{"type": "FeatureCollection",  "features": [' + ','.join(geojson_all) + ']}')
+
 
 cursor.execute("select user_id, lat, lon from gps")
 lines = cursor.fetchall()

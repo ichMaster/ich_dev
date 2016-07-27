@@ -18,7 +18,7 @@ $(document).ready(function() {
           	trHTML += '<tr><td>' + item.user_id + '</td><td>' + item.lat + '</td><td>' + item.lng + '</td><td>' + item.date + '</td><td>' + item.time + '</td></tr>';
        });
         
-       $('#locations').append(trHTML);	
+       //$('#locations').append(trHTML);	
 
 
     });
@@ -28,22 +28,22 @@ var map;
 function initMap() {
 	map = new google.maps.Map(document.getElementById('map'), {
 	  center: {lat: 40.009328, lng: 116.320887},
-	  zoom: 4
+	  zoom: 16
 	});
 
 	var marker = new google.maps.Marker({
 	  position: {"lat": 40.009328, "lng": 116.320887},
 	  title: "User_id: 128"
 	});
-	marker.setMap(map);
+	//marker.setMap(map);
 
     $.ajax({
-        url: "http://127.0.0.1:7379/get/all_points"
+        url: "http://127.0.0.1:7379/get/all_geopoints"
     }).then(function(data) {
-       var points = jQuery.parseJSON(data.get);
-       var geo = GeoJSON.parse(points, {Point: ['lat', 'lng']});
-       console.log('json', geo);
-       map.data.addGeoJson(geo);
+      var points = jQuery.parseJSON(data.get);
+      console.log(points);
+      map.data.addGeoJson(points);
+      
 
     });
 
