@@ -19,16 +19,27 @@ $(document).ready(function() {
        });
         
        //$('#locations').append(trHTML);	
-
-
     });
 })
 
 var map;
+
+function getData() {
+  $.ajax({
+      url: "http://127.0.0.1:7379/get/all_geopoints",
+  }).success(function(data){
+      var points = jQuery.parseJSON(data.get);
+      console.log(points);
+      map.data.addGeoJson(points);
+  })  
+  setTimeout("getData()", 5000);
+
+}
+
 function initMap() {
 	map = new google.maps.Map(document.getElementById('map'), {
 	  center: {lat: 40.009328, lng: 116.320887},
-	  zoom: 16
+	  zoom: 13
 	});
 
 	var marker = new google.maps.Marker({
@@ -36,15 +47,10 @@ function initMap() {
 	  title: "User_id: 128"
 	});
 	//marker.setMap(map);
-
-    $.ajax({
-        url: "http://127.0.0.1:7379/get/all_geopoints"
-    }).then(function(data) {
-      var points = jQuery.parseJSON(data.get);
-      console.log(points);
-      map.data.addGeoJson(points);
-      
-
-    });
+  getData();
 
 }
+
+
+
+
