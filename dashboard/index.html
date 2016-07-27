@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello jQuery</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="get.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-LRv5i2ZSJiGfWboyw8BgrTEwmn8FxGg&callback=initMap" async defer></script>
+        <style>
+          html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+          }
+          #map {
+            height: 100%;
+          }
+        </style>
+    </head>
+
+    <body>
+        <div>
+            <p class="webdis-respons">respons: </p>
+            <p class="webdis-userid">user_id: </p>
+            <p class="webdis-lat">lat: </p>
+            <p class="webdis-lon">lon: </p>
+            <p class="webdis-date">date: </p>
+            <p class="webdis-time">time: </p>
+        </div>
+        <table id="locations" border='1'>
+            <tr>
+                <th>user_id</th>
+                <th>lat</th>
+                <th>lng</th>
+                <th>date</th>
+                <th>time</th>
+            </tr>
+        </table>
+    <div id="map"></div>
+    </body>
+</html>
