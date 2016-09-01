@@ -1,0 +1,48 @@
+Demo1: Spark Environments
+-------------------------------------------
+fl = sc.textFile("/home/ich/ich_dev/HDInsight-Spark/simple.txt")
+
+fl = sc.textFile("wasb:///example/data/gutenberg/davinci.txt")
+
+fl.count()
+fl.take(5)
+fl.flatMap(lambda x: x.split(" ")).count()
+
+res = fl.flatMap(lambda x: x.split(" ")).map(lambda x: (x, 1)).reduceByKey(lambda x, y: x + y).sortBy(lambda x: x[1], ascending=False)
+res.take(10)
+res.saveAsTextFile("wasb:///example/data/gutenberg/davinci_count1")
+
+hadoop fs -ls /example/data/gutenberg/davinci_count1.txt/
+
+
+- Spark shell from localhost (line count)
+- Notebook
+
+- create cluster and panel
+- Ambari, Spark, Config, Spark History, Yarn, HDFS, Hive, Queries
+- Notebook
+- SSH from local host (word count)
+
+
+Demo2: Spark Core Oparations
+--------------------------------------------
+- SparkCore notebook
+
+
+Demo3: Streaming
+--------------------------
+nc -lk 9999
+/opt/spark-1.6.1-bin-hadoop2.6/bin/spark-submit ./network_wordcount.py localhost 9999
+
+Demo4: SparkSQL
+----------------------------
+- SparkSQL
+- BIExploration notebook
+- PowerBI
+https://app.powerbi.com/groups/me/reports/cf7a741f-e6f1-4c02-a2df-dc2f66db6a9b/ReportSection
+
+Demo5: SparkML
+---------------------------
+- SparkML notebook
+
+
