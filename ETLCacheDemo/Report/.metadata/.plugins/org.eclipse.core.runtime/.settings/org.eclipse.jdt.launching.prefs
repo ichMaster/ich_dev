@@ -1,0 +1,2 @@
+eclipse.preferences.version=1
+org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1473869428395">\n<vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\n<vm id\="1473869428395" javadocURL\="https\://docs.oracle.com/javase/8/docs/api/" name\="jre.linux.gtk.x86_64.feature_1.8.0.u77" path\="/home/ich/TIBCOJaspersoftStudio-6.3.0.final/features/jre.linux.gtk.x86_64.feature_1.8.0.u77"/>\n</vmType>\n</vmSettings>\n

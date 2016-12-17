@@ -1,0 +1,6 @@
+The Great tutorial series
+  Completed Examples
+
+Completed examples are source files, projects, settings, and code that represent your project as it stands at the END of the current lesson. You can use these completed files to check your work, get help for typos and nagging errors, or just to skip a few steps (although we don't recommend that sort of thing).
+
+We welcome your feedback. You can always reach us online at http://www.oreilly.com/go/great or on Twitter at @oreillyvideo. Enjoy!

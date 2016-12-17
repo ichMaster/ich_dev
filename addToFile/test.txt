@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>44
+<transformation>44
+  <info>44
+    <name>REST_test</name>44
+    <description/>44
+    <extended_description/>44
+    <trans_version/>44
+    <trans_type>Normal</trans_type>44
+    <directory>&#x2f;</directory>44
+    <parameters>44
+    </parameters>44
+    <log>44
+<trans-log-table><connection/>44
+<schema/>44
+<table/>44
+<size_limit_lines/>44
+<interval/>44
+<timeout_days/>44
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field><field><id>EXECUTING_SERVER</id><enabled>N</enabled><name>EXECUTING_SERVER</name></field><field><id>EXECUTING_USER</id><enabled>N</enabled><name>EXECUTING_USER</name></field><field><id>CLIENT</id><enabled>N</enabled><name>CLIENT</name></field></trans-log-table>44
+<perf-log-table><connection/>44
+<schema/>44
+<table/>44
+<interval/>44
+<timeout_days/>44
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>SEQ_NR</id><enabled>Y</enabled><name>SEQ_NR</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>INPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>INPUT_BUFFER_ROWS</name></field><field><id>OUTPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>OUTPUT_BUFFER_ROWS</name></field></perf-log-table>44
+<channel-log-table><connection/>44
+<schema/>44
+<table/>44
+<timeout_days/>44
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>LOGGING_OBJECT_TYPE</id><enabled>Y</enabled><name>LOGGING_OBJECT_TYPE</name></field><field><id>OBJECT_NAME</id><enabled>Y</enabled><name>OBJECT_NAME</name></field><field><id>OBJECT_COPY</id><enabled>Y</enabled><name>OBJECT_COPY</name></field><field><id>REPOSITORY_DIRECTORY</id><enabled>Y</enabled><name>REPOSITORY_DIRECTORY</name></field><field><id>FILENAME</id><enabled>Y</enabled><name>FILENAME</name></field><field><id>OBJECT_ID</id><enabled>Y</enabled><name>OBJECT_ID</name></field><field><id>OBJECT_REVISION</id><enabled>Y</enabled><name>OBJECT_REVISION</name></field><field><id>PARENT_CHANNEL_ID</id><enabled>Y</enabled><name>PARENT_CHANNEL_ID</name></field><field><id>ROOT_CHANNEL_ID</id><enabled>Y</enabled><name>ROOT_CHANNEL_ID</name></field></channel-log-table>44
+<step-log-table><connection/>44
+<schema/>44
+<table/>44
+<timeout_days/>44
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>44
+<metrics-log-table><connection/>44
+<schema/>44
+<table/>44
+<timeout_days/>44
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>METRICS_DATE</id><enabled>Y</enabled><name>METRICS_DATE</name></field><field><id>METRICS_CODE</id><enabled>Y</enabled><name>METRICS_CODE</name></field><field><id>METRICS_DESCRIPTION</id><enabled>Y</enabled><name>METRICS_DESCRIPTION</name></field><field><id>METRICS_SUBJECT</id><enabled>Y</enabled><name>METRICS_SUBJECT</name></field><field><id>METRICS_TYPE</id><enabled>Y</enabled><name>METRICS_TYPE</name></field><field><id>METRICS_VALUE</id><enabled>Y</enabled><name>METRICS_VALUE</name></field></metrics-log-table>44
+    </log>44
+    <maxdate>44
+      <connection/>44
+      <table/>44
+      <field/>44
+      <offset>0.0</offset>44
+      <maxdiff>0.0</maxdiff>44
+    </maxdate>44
+    <size_rowset>10000</size_rowset>44
+    <sleep_time_empty>50</sleep_time_empty>44
+    <sleep_time_full>50</sleep_time_full>44
+    <unique_connections>N</unique_connections>44
+    <feedback_shown>Y</feedback_shown>44
+    <feedback_size>50000</feedback_size>44
+    <using_thread_priorities>Y</using_thread_priorities>44
+    <shared_objects_file/>44
+    <capture_step_performance>N</capture_step_performance>44
+    <step_performance_capturing_delay>1000</step_performance_capturing_delay>44
+    <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>44
+    <dependencies>44
+    </dependencies>44
+    <partitionschemas>44
+    </partitionschemas>44
+    <slaveservers>44
+    </slaveservers>44
+    <clusterschemas>44
+    </clusterschemas>44
+  <created_user>-</created_user>44
+  <created_date>2016&#x2f;09&#x2f;12 20&#x3a;02&#x3a;34.939</created_date>44
+  <modified_user>-</modified_user>44
+  <modified_date>2016&#x2f;09&#x2f;12 20&#x3a;02&#x3a;34.939</modified_date>44
+    <key_for_session_key/>44
+    <is_key_private>N</is_key_private>44
+  </info>44
+  <notepads>44
+  </notepads>44
+  <order>44
+  <hop> <from>REST Client</from><to>Pentaho Reporting Output</to><enabled>Y</enabled> </hop>44
+  </order>44
+  <step>44
+    <name>REST Client</name>44
+    <type>Rest</type>44
+    <description/>44
+    <distribute>Y</distribute>44
+    <custom_distribution/>44
+    <copies>1</copies>44
+         <partitioning>44
+           <method>none</method>44
+           <schema_name/>44
+           </partitioning>44
+    <applicationType>JSON</applicationType>44
+    <method>GET</method>44
+    <url>http&#x3a;&#x2f;&#x2f;apple.com</url>44
+    <urlInField>N</urlInField>44
+    <dynamicMethod>N</dynamicMethod>44
+    <methodFieldName/>44
+    <urlField/>44
+    <bodyField/>44
+    <httpLogin/>44
+    <httpPassword>Encrypted </httpPassword>44
+    <proxyHost/>44
+    <proxyPort/>44
+    <preemptive>N</preemptive>44
+    <trustStoreFile/>44
+    <trustStorePassword>Encrypted </trustStorePassword>44
+    <headers>44
+      </headers>44
+    <parameters>44
+      </parameters>44
+    <matrixParameters>44
+      </matrixParameters>44
+    <result>44
+      <name>result</name>44
+      <code/>44
+      <response_time/>44
+      </result>44
+     <cluster_schema/>44
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>44
+      <xloc>368</xloc>44
+      <yloc>192</yloc>44
+      <draw>Y</draw>44
+      </GUI>44
+    </step>44
+44
+  <step>44
+    <name>Pentaho Reporting Output</name>44
+    <type>PentahoReportingOutput</type>44
+    <description/>44
+    <distribute>Y</distribute>44
+    <custom_distribution/>44
+    <copies>1</copies>44
+         <partitioning>44
+           <method>none</method>44
+           <schema_name/>44
+           </partitioning>44
+  <input_file_field/>44
+  <output_file_field/>44
+  <parameters>  </parameters>    <processor_type>PDF</processor_type>44
+     <cluster_schema/>44
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>44
+      <xloc>512</xloc>44
+      <yloc>192</yloc>44
+      <draw>Y</draw>44
+      </GUI>44
+    </step>44
+44
+  <step_error_handling>44
+  </step_error_handling>44
+   <slave-step-copy-partition-distribution>44
+</slave-step-copy-partition-distribution>44
+   <slave_transformation>N</slave_transformation>44
+44
+</transformation>44

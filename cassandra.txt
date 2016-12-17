@@ -1,0 +1,65 @@
+nodetool ring
+nodetool status
+cassandra -seeds <ip>
+
+token
+virtual node
+
+Snitch
+SimpleSnitch
+GossipingPropertyFileSnitch
+PropertyFileSnitch
+
+cassandra -dc DC1 -rack RAC1
+
+
+
+keyspace -> table -> partition -> row
+
+SimpleStrategy - replicaiton factor
+NetworkTopologyStratage - by datacenters
+
+distributed by rack and by datacenters
+
+keyspace
+class: Stragety
+replication factor for each datacenter
+
+
+Coordinator Node
+Replica Nodes
+
+Tunable Consistency - how many nodes wait
+Write -acknolage (ack)
+One, Two, Three, Quorul, All, Any
+Quarum - majority of nodes
+any - cluster is online, event coordinator
+
+Tunable Consistency - Write
+(digest)
+
+Read Repair for All consistency when one of the nodes digest different data
+
+Eventual consistency
+
+Strong Consistency when
+(write consistency + read consistency) > replicaiton factor
+
+
+Network Topology
+Replication Factor
+Write and Read Consistency
+
+Datacenter levels
+each_quorum
+local_quorum
+local_one
+
+commands:
+consistency quorum
+tracing on
+
+
+
+
+
