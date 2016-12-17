@@ -14,6 +14,9 @@ res.saveAsTextFile("wasb:///example/data/gutenberg/davinci_count1")
 
 hadoop fs -ls /example/data/gutenberg/davinci_count1.txt/
 
+/opt/spark-1.6.1-bin-hadoop2.6/bin/spark-submit ./job_wordcount.py ./simple.txt ./simple_out
+
+
 
 - Spark shell from localhost (line count)
 - Notebook
